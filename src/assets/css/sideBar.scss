@@ -5,14 +5,15 @@
     display: flex;
     &__menu{
         background-color: #007FAB;
-        width: 135px;
+        width: 0;
+        transition: all 0.3s;
     }
     &__tab{
         width: 60px;
         background-image: url(../img/bg/bg_menuSide.png);
         background-repeat: no-repeat;
         background-position: left center;
-        background-size: auto 100%;
+        background-size: 20px 100%;
         height: 100%;
         position: relative;
         &__icon{
@@ -23,7 +24,28 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 33px;
+            left: 19px;
+            cursor: pointer;
+            &:hover{
+                background-image: url(../img/btn/btn_burger_open_h.png);
+            }
+            &.mouseOn{
+                background-image: url(../img/btn/btn_burger_open_p.png);
+            }
+        }
+    }
+    &.active{
+        .sideBar__menu{
+            width: 135px;
+        };
+        .sideBar__tab__icon{
+            background-image: url(../img/btn/btn_burger_close.png);
+            &:hover{
+                background-image: url(../img/btn/btn_burger_close_h.png);
+            }
+            &.mouseOn{
+                background-image: url(../img/btn/btn_burger_close_p.png);
+            }
         }
     }
 }
