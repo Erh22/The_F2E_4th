@@ -1,12 +1,56 @@
+$primary-default:#007FAB;
+$primary-dark:#003A4F;
+$primary-tint: #B0D2DE;
+$secondary-default: #FFC37D;
+$secondary-dark: #A46039;
+$secondary-tint: #FFE2A9;
 .sideBar{
     height: 100vh;
     width: auto;
     position: fixed;
     display: flex;
     &__menu{
-        background-color: #007FAB;
+        background-color: $primary-default;
         width: 0;
         transition: all 0.3s;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        &__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 20px;
+            margin-bottom: 40px;
+            img{
+                width: 60px;
+                height: 60px;
+                margin-bottom: 4px;
+                &.img01{
+                    display: block;
+                }
+                &.img02{
+                    display: none;
+                }
+            }
+            span{
+                color: $secondary-default;
+                font-size: 18px;
+                white-space: nowrap;
+            }
+            &:hover{
+                .img01{
+                    display: none;
+                }
+                .img02{
+                    display: block;
+                }
+                span{
+                    color: $secondary-tint;
+                }
+            }
+        }
     }
     &__tab{
         width: 60px;
@@ -37,6 +81,9 @@
     &.active{
         .sideBar__menu{
             width: 135px;
+            &__item{
+                display: flex;
+            }
         };
         .sideBar__tab__icon{
             background-image: url(../img/btn/btn_burger_close.png);
