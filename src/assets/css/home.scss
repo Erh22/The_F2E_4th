@@ -1,7 +1,17 @@
 .home{
-    background-color: #FFC37D;
+    .map{
+        width: 225px;
+        height: 140px;
+        position: fixed;
+        left: 50px;
+        bottom: 33px;
+        &__now{
+            position: absolute;
+            bottom: 58px;
+            left: 2px;
+        }
+    }
     .section01{
-        height: 1080px;
         width: 100%;
     }
 }

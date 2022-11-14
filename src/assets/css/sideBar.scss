@@ -9,8 +9,9 @@ $secondary-tint: #FFE2A9;
     width: auto;
     position: fixed;
     display: flex;
+    z-index: 99;
     &__menu{
-        background-color: $primary-default;
+        background-color: var(--primary-default);
         width: 0;
         transition: all 0.3s;
         overflow: hidden;
@@ -35,7 +36,7 @@ $secondary-tint: #FFE2A9;
                 }
             }
             span{
-                color: $secondary-default;
+                color: var(--secondary-default);
                 font-size: 18px;
                 white-space: nowrap;
             }
@@ -47,7 +48,7 @@ $secondary-tint: #FFE2A9;
                     display: block;
                 }
                 span{
-                    color: $secondary-tint;
+                    color: var(--secondary-tint);
                 }
             }
         }
@@ -69,7 +70,7 @@ $secondary-tint: #FFE2A9;
             top: 50%;
             transform: translateY(-50%);
             left: 19px;
-            cursor: pointer;
+            cursor: url('../img/cursor/cursor.svg'),pointer;
             &:hover{
                 background-image: url(../img/btn/btn_burger_open_h.png);
             }
