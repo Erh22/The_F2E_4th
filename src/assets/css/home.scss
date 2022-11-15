@@ -11,6 +11,92 @@
             left: 2px;
         }
     }
+    .user{
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 30px;
+        right: 20px;
+        background-image: url(../img/btn/btn_user.png);
+        background-size: 100% 100%;
+        &:hover{
+            background-image: url(../img/btn/btn_user_h.png);
+        }
+        &.mouseOn{
+            background-image: url(../img/btn/btn_user_p.png);
+        }
+    }
+    .trafficLight{
+        width: 275px;
+        height: 153px;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        span{
+            color: #FF5136;
+            font-size: 32px;
+            font-family: "源柔ゴシックP-bold";
+            display: inline-block;
+            width: 240px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+        }
+        &__ready-frame{
+            max-width: 100%;
+            z-index: 2;
+            position: relative;
+        }
+        &__ready-1{
+            position: absolute;
+            width: 50px;
+            right: 62px;
+            bottom: 27px;
+        }
+        &__ready-2{
+            position: absolute;
+            width: 50px;
+            right: 124px;
+            bottom: 27px;
+        }
+        &__ready-3{
+            position: absolute;
+            width: 50px;
+            right: 190px;
+            bottom: 27px;
+        }
+    }
+    .join{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span{
+            color: var(--primary-default);
+            font-size: 24px;
+            font-family: "源柔ゴシックP-bold";
+            margin-bottom: 4px;
+        }
+        img{
+            height: 71px;
+            margin-bottom: 4px;
+        }
+        &__btn{
+            width: 103px;
+            height: 60px;
+            background-image: url(../img/btn/btn_join.png);
+            background-size: 100% auto;
+            &:hover{
+                background-image: url(../img//btn/btn_join_h.png);
+            }
+        }
+    }
     .section01{
         width: 100%;
     }

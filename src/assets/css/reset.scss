@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	cursor: url('../img/cursor/cursor.svg'),auto;
+	font-family: "源柔ゴシックP-normal";
 }
 ol, ul {
 	list-style: none;
@@ -65,4 +65,5 @@ body{
 	--secondary-default: #FFC37D;
 	--secondary-dark: #A46039;
 	--secondary-tint: #FFE2A9;
+	cursor: url('../img/cursor/cursor.svg'),auto;
 }
