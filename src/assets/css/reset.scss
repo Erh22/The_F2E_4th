@@ -2,7 +2,15 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+:root{
+	--primary-default:#007FAB;
+	--primary-dark:#003A4F;
+	--primary-tint: #B0D2DE;
+	--secondary-default: #FFC37D;
+	--secondary-dark: #A46039;
+	--secondary-tint: #FFE2A9;
+	cursor: url('../img/cursor/cursor.svg'),auto;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,13 +65,21 @@ body{
     overflow-x: hidden;
     position: relative;
 	background-color: #FFC37D;
+	font-size: 18px;
 }
-:root{
-	--primary-default:#007FAB;
-	--primary-dark:#003A4F;
-	--primary-tint: #B0D2DE;
-	--secondary-default: #FFC37D;
-	--secondary-dark: #A46039;
-	--secondary-tint: #FFE2A9;
-	cursor: url('../img/cursor/cursor.svg'),auto;
+h1{
+	font-size: 32px;
+	font-family: "源柔ゴシックP-bold";
+}
+h5{
+	font-size: 24px;
+	font-family: "源柔ゴシックP-bold";
+}
+section{
+	position: relative;
+}
+.container{
+	width: 1440px;
+	position: relative;
+	margin: 0 auto;
 }

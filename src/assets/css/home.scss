@@ -27,49 +27,6 @@
             background-image: url(../img/btn/btn_user_p.png);
         }
     }
-    .trafficLight{
-        width: 275px;
-        height: 153px;
-        position: fixed;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        span{
-            color: #FF5136;
-            font-size: 32px;
-            font-family: "源柔ゴシックP-bold";
-            display: inline-block;
-            width: 240px;
-            height: 45px;
-            line-height: 45px;
-            text-align: center;
-        }
-        &__ready-frame{
-            max-width: 100%;
-            z-index: 2;
-            position: relative;
-        }
-        &__ready-1{
-            position: absolute;
-            width: 50px;
-            right: 62px;
-            bottom: 27px;
-        }
-        &__ready-2{
-            position: absolute;
-            width: 50px;
-            right: 124px;
-            bottom: 27px;
-        }
-        &__ready-3{
-            position: absolute;
-            width: 50px;
-            right: 190px;
-            bottom: 27px;
-        }
-    }
     .join{
         position: fixed;
         right: 0;
@@ -77,6 +34,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 3;
         span{
             color: var(--primary-default);
             font-size: 24px;
@@ -99,5 +57,172 @@
     }
     .section01{
         width: 100%;
+        height: 250vh;
+        overflow: hidden;
+        .trafficLight{
+            width: 275px;
+            height: 153px;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index: -1;
+            span{
+                color: #FF5136;
+                font-size: 32px;
+                font-family: "源柔ゴシックP-bold";
+                display: inline-block;
+                width: 240px;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+            }
+            &__ready-frame{
+                max-width: 100%;
+                z-index: 2;
+                position: relative;
+            }
+            &__ready-1{
+                position: absolute;
+                width: 50px;
+                right: 62px;
+                bottom: 27px;
+            }
+            &__ready-2{
+                position: absolute;
+                width: 50px;
+                right: 124px;
+                bottom: 27px;
+            }
+            &__ready-3{
+                position: absolute;
+                width: 50px;
+                right: 190px;
+                bottom: 27px;
+            }
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        &__logo{
+            width: 680px;
+            height: 236px;
+            margin-top: 44px;
+            position: relative;
+            z-index: 3;
+            img{
+                width: 100%;
+            }
+        }
+        &__title{
+            display: inline-block;
+            border-radius: 100px;
+            padding: 8px 40px;
+            background-color: #FF5136;
+            color: #fff; 
+            margin-top: -10px;
+            position: relative;
+            z-index: 3;
+            margin-bottom: 47px;
+        }
+        &__ul{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: 3;
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h5{
+                    color: var(--primary-default);
+                    margin-bottom: 8px;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    background-color: var(--primary-default);
+                    border-radius: 40px;
+                    padding: 4px 28px;
+                    justify-content: center;
+                    img{
+                        width: 24px;
+                        margin-right: 14px;
+                    }
+                    span{
+                        color: #fff;
+                        display: inline-block;
+                        font-family: '源柔ゴシックP-bold';
+                        line-height: 34px;
+                    }
+                }
+            }
+        }
+        &__running{
+            width: 100%;
+            &__decorate{
+                width: 1687px;
+                height: 280px;
+                position: fixed;
+                top: 42%;
+                left: 50%;
+                transform: translate(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                opacity: 1;
+                z-index: -2;
+                &__left{
+                    width: 430px;
+                }
+                &__right{
+                    width: 485px;
+                }
+            }
+            &__start{
+                max-width: 1430px;
+                height: auto;
+                position: fixed;
+                bottom: -140px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &__road{
+                max-width: 1175px;
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &__character-f2e{
+                position: fixed;
+                width: 280px;
+                left: 450px;
+                bottom: 10px;
+            }
+            &__character-ui{
+                position: fixed;
+                width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 30px;
+            }
+            &__character-team{
+                position: fixed;
+                width: 280px;
+                right: 450px;
+                bottom: 10px;
+            }
+        }
+    }
+    .section02{
+        width: 100%;
+        height: 100vh;
     }
 }
