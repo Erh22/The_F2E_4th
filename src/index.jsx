@@ -1,6 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './assets/css/reset.scss'
+import './assets/css/home.scss'
+import './assets/css/font.scss'
+import './assets/css/sideBar.scss'
 import Home from './home';
 import reportWebVitals from './reportWebVitals';
 
