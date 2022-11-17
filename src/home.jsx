@@ -1,5 +1,5 @@
 import './assets/css/style.scss'
-import {uesEffect,useState,useRef, useEffect} from 'react'
+import {useState,useRef, useEffect} from 'react'
 import { gsap } from 'gsap'
 import ic_menu_info from './assets/img/ic/ic_menu_info.png'
 import ic_menu_info_h from './assets/img/ic/ic_menu_info_h.png'
