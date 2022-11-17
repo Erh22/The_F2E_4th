@@ -29,6 +29,7 @@ function Home(){
     const ref = useRef(null);
     useEffect(() => {
         const element = ref.current
+        console.log('element',element)
         // gsap.fromTo(
         //     element.querySelector('.trafficLight__ready-1'),
         //     {
