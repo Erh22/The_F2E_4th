@@ -57,7 +57,7 @@
     }
     .section01{
         width: 100%;
-        height: 250vh;
+        height: 100vh;
         overflow: hidden;
         .trafficLight{
             width: 275px;
@@ -69,15 +69,26 @@
             display: flex;
             flex-direction: column;
             z-index: -1;
-            span{
-                color: #FF5136;
-                font-size: 32px;
-                font-family: "源柔ゴシックP-bold";
+            &__text{
+                height: 45px;
                 display: inline-block;
                 width: 240px;
-                height: 45px;
-                line-height: 45px;
-                text-align: center;
+                position: relative;
+                &__h4{
+                    color: #FF5136;
+                    display: inline-block;
+                    width: 240px;
+                    height: 45px;
+                    line-height: 45px;
+                    text-align: center;
+                    position: absolute;
+                    &-ready{
+                        opacity: 1;
+                    }
+                    &-go{
+                        opacity: 0;
+                    }
+                }
             }
             &__ready-frame{
                 max-width: 100%;
@@ -115,7 +126,7 @@
             width: 680px;
             height: 236px;
             margin-top: 44px;
-            position: relative;
+            position: fixed;
             z-index: 3;
             img{
                 width: 100%;
@@ -128,16 +139,18 @@
             background-color: #FF5136;
             color: #fff; 
             margin-top: -10px;
-            position: relative;
+            position: fixed;
             z-index: 3;
-            margin-bottom: 47px;
+            top: 286px;
         }
         &__ul{
-            width: 100%;
+            width: 1440px;
+            position: fixed;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
             z-index: 3;
+            top: 37%;
             li{
                 display: flex;
                 flex-direction: column;
@@ -180,6 +193,7 @@
                 justify-content: space-between;
                 opacity: 1;
                 z-index: -2;
+                transition: .3s;
                 &__left{
                     width: 430px;
                 }
@@ -224,6 +238,10 @@
         }
     }
     .section02{
+        width: 100%;
+        height: 100vh;
+    }
+    .section03{
         width: 100%;
         height: 100vh;
     }

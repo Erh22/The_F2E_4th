@@ -26,51 +26,33 @@ import character_ui from './assets/img/character/character_ui.gif'
 import bg_decorate_01 from './assets/img/bg/bg_decorate_01.png'
 import bg_decorate_05 from './assets/img/bg/bg_decorate_05.png'
 import { Timeline } from 'gsap/gsap-core'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
 function Home(){
+    gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
-    const tl = new Timeline({
-        scrollTrigger: {
-          trigger: '.section02',
-          start: 'top 80%',
-          end: '+=500',
-          scrub: !0,
-        },
-    })
     useEffect(() => {
-        const element = ref.current
+        const element = ref.current;
+        const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: '.section02',
+              start: 'top 10%',
+              end: '+=1000',
+              scrub: !0,
+            },
+        })
         tl
-        .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2',{opacity: 1},{opacity: 0}).fromTo('.trafficLight__ready-2',{opacity: 0},{opacity: 1}).fromTo('.trafficLight__ready-3',{opacity: 1},{opacity: 0})
-    },[])
-    // useEffect(() => {
-    //     console.log('element',element)
-    //     tl.fromTo(element.querySelector('.trafficLight__ready-1'),{opacity:0},'<').fromTo(element.querySelector('.trafficLight__ready-2'),{opacity:0},'<')
-    //     // gsap.fromTo(
-    //     //     element.querySelector('.trafficLight__ready-1'),
-    //     //     {
-    //     //         opacity:1,
-    //     //     },{
-    //     //         opacity:0,
-    //     //         scrollTrigger:{
-    //     //             trigger:element.querySelector('.section01'),
-    //     //             start: "top 70%",
-    //     //             end: "bottom center",
-    //     //             scrub: 1,
-    //     //             pin:true,
-    //     //         }
-    //     //     }
-    //     // );
+        .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2',{display:'block'},{display:'none'})
+        .to('.trafficLight__text__h4-ready',{opacity:0})
+        .to('.section01__running__decorate',{scale:0.8})
+        .fromTo('.trafficLight__ready-3',{display:'block'},{display:'none'},'+=2')
+        .to('.trafficLight__ready-2',{display:'block'})
+        .to('.section01__running__decorate',{scale:0.6})
+        .to('.trafficLight__ready-2',{display:'none'})
+        .to('.trafficLight__ready-1',{display:'block'})
+        .to('.trafficLight__text__h4-go',{opacity:1})
+        .to('.section01__running__decorate',{scale:0.1,opacity:0})
+    })
 
-    //     // gsap.timeline({
-    //     //     scrollTrigger: {
-    //     //       trigger: element.querySelector('.section02'),
-    //     //       start: 'top 250%',
-    //     //       end: 'top 1%',
-    //     //       scrub: true,
-    //     //     },
-    //     // }).to(element.querySelector('.trafficLight__ready-1'),{opacity:0},'<')
-    //     // .to(element.querySelector('.trafficLight__ready-2'),{opacity:0},'<')
-    
-    // })
     // 側邊欄收合
     const [sideBar,setSideBar] = useState(false)
 
@@ -132,7 +114,10 @@ function Home(){
                onMouseUp={() => setMouseHandleUser(false)}/>
             <section className='section01'>
                 <div className='trafficLight'>
-                    <span>READY?</span>
+                    <div className='trafficLight__text'>
+                        <h4 className='trafficLight__text__h4 trafficLight__text__h4-ready'>READY?</h4>
+                        <h4 className='trafficLight__text__h4 trafficLight__text__h4-go'>GO!!</h4>
+                    </div>
                     <img className='trafficLight__ready-frame' src={ready_frame} alt="" />
                     <img className='trafficLight__ready-1' src={ready_1} alt="" />
                     <img className='trafficLight__ready-2' src={ready_2} alt="" />
@@ -182,6 +167,7 @@ function Home(){
             <section className='section02'>
                  
             </section>
+            <section className='section03'></section>
         </div>
     )
 }
