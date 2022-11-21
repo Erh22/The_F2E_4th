@@ -1,64 +1,72 @@
 .home{
-    .map{
-        width: 225px;
-        height: 140px;
-        position: fixed;
-        left: 50px;
-        bottom: 33px;
-        &__now{
-            position: absolute;
-            bottom: 58px;
-            left: 2px;
-        }
-    }
-    .user{
-        display: block;
-        width: 80px;
-        height: 80px;
-        position: fixed;
-        top: 30px;
-        right: 20px;
-        background-image: url(../img/btn/btn_user.png);
-        background-size: 100% 100%;
-        &:hover{
-            background-image: url(../img/btn/btn_user_h.png);
-        }
-        &.mouseOn{
-            background-image: url(../img/btn/btn_user_p.png);
-        }
-    }
-    .join{
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 3;
-        span{
-            color: var(--primary-default);
-            font-size: 24px;
-            font-family: "源柔ゴシックP-bold";
-            margin-bottom: 4px;
-        }
-        img{
-            height: 71px;
-            margin-bottom: 4px;
-        }
-        &__btn{
-            width: 103px;
-            height: 60px;
-            background-image: url(../img/btn/btn_join.png);
-            background-size: 100% auto;
-            &:hover{
-                background-image: url(../img//btn/btn_join_h.png);
-            }
-        }
-    }
     .section01{
         width: 100%;
         height: 100vh;
         overflow: hidden;
+        .logo{
+            width: 200px;
+            position: fixed;
+            left: 50px;
+            top: 50px;
+            opacity: 0;
+        }
+        .map{
+            width: 225px;
+            height: 140px;
+            position: fixed;
+            left: 50px;
+            bottom: 33px;
+            &__now{
+                position: absolute;
+                bottom: 58px;
+                left: 2px;
+            }
+        }
+        .user{
+            display: block;
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 30px;
+            right: 20px;
+            background-image: url(../img/btn/btn_user.png);
+            background-size: 100% 100%;
+            z-index: 3;
+            &:hover{
+                background-image: url(../img/btn/btn_user_h.png);
+            }
+            &.mouseOn{
+                background-image: url(../img/btn/btn_user_p.png);
+            }
+        }
+        .join{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+            span{
+                color: var(--primary-default);
+                font-size: 24px;
+                font-family: "源柔ゴシックP-bold";
+                margin-bottom: 4px;
+            }
+            img{
+                height: 71px;
+                margin-bottom: 4px;
+            }
+            &__btn{
+                width: 103px;
+                height: 60px;
+                background-image: url(../img/btn/btn_join.png);
+                background-size: 100% auto;
+                &:hover{
+                    background-image: url(../img//btn/btn_join_h.png);
+                }
+            }
+        }
         .trafficLight{
             width: 275px;
             height: 153px;
@@ -149,7 +157,7 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            z-index: 3;
+            z-index: -1;
             top: 37%;
             li{
                 display: flex;
@@ -208,6 +216,7 @@
                 bottom: -140px;
                 left: 50%;
                 transform: translateX(-50%);
+                z-index: -2;
             }
             &__road{
                 max-width: 1175px;
@@ -244,5 +253,16 @@
     .section03{
         width: 100%;
         height: 100vh;
+        padding-top: 40px;
+        h2{
+            display: block;
+            background-image: url(../img/bg/bg_talking.png);
+            height: 151px;
+            background-size: 720px 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            line-height: 123px;
+            opacity: 0;
+        }
     }
 }

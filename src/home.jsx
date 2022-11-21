@@ -1,14 +1,7 @@
 import './assets/css/style.scss'
-import {useState,useRef, useEffect} from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import ic_menu_info from './assets/img/ic/ic_menu_info.png'
-import ic_menu_info_h from './assets/img/ic/ic_menu_info_h.png'
-import ic_menu_job from './assets/img/ic/ic_menu_job.png'
-import ic_menu_job_h from './assets/img/ic/ic_menu_job_h.png'
-import ic_menu_list from './assets/img/ic/ic_menu_list.png'
-import ic_menu_list_h from './assets/img/ic/ic_menu_list_h.png'
-import ic_menu_strategy from './assets/img/ic/ic_menu_strategy.png'
-import ic_menu_strategy_h from './assets/img/ic/ic_menu_strategy_h.png'
+import SideBar from './components/SideBar'
 import map from './assets/img/main/map.svg';
 import map_now from './assets/img/main/map_now.gif'
 import ready_frame from './assets/img/main/ready_frame.png'
@@ -25,94 +18,72 @@ import character_team from './assets/img/character/character_team.gif'
 import character_ui from './assets/img/character/character_ui.gif'
 import bg_decorate_01 from './assets/img/bg/bg_decorate_01.png'
 import bg_decorate_05 from './assets/img/bg/bg_decorate_05.png'
+import logo from './assets/img/logo/logo.png'
 import { Timeline } from 'gsap/gsap-core'
-import {ScrollTrigger} from 'gsap/ScrollTrigger'
-function Home(){
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+function Home() {
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
     useEffect(() => {
         const element = ref.current;
         const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: '.section02',
-              start: 'top 10%',
-              end: '+=1000',
-              scrub: !0,
+                trigger: '.section02',
+                start: 'top 10%',
+                end: '+=1000',
+                scrub: !0,
             },
         })
         tl
-        .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2',{display:'block'},{display:'none'})
-        .to('.trafficLight__text__h4-ready',{opacity:0})
-        .to('.section01__running__decorate',{scale:0.8})
-        .fromTo('.trafficLight__ready-3',{display:'block'},{display:'none'},'+=2')
-        .to('.trafficLight__ready-2',{display:'block'})
-        .to('.section01__running__decorate',{scale:0.6})
-        .to('.trafficLight__ready-2',{display:'none'})
-        .to('.trafficLight__ready-1',{display:'block'})
-        .to('.trafficLight__text__h4-go',{opacity:1})
-        .to('.section01__running__decorate',{scale:0.1,opacity:0})
+            .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2', { display: 'block' }, { display: 'none' })
+            .to('.trafficLight__text__h4-ready', { opacity: 0 })
+            .to('.section01__running__decorate', { scale: 0.8 })
+            .fromTo('.trafficLight__ready-3', { display: 'block' }, { display: 'none' }, '+=2')
+            .to('.trafficLight__ready-2', { display: 'block' })
+            .to('.section01__running__decorate', { scale: 0.6 })
+            .to('.trafficLight__ready-2', { display: 'none' })
+            .to('.trafficLight__ready-1', { display: 'block' })
+            .to('.trafficLight__text__h4-go', { opacity: 1 })
+            .to('.section01__running__decorate', { scale: 0.1, opacity: 0 })
+            .to('.trafficLight', { opacity: 0 })
+            .to('.section01__ul', { opacity: 0 })
+            .to('.section01__logo', { opacity: 0 })
+            .to('.section01__title', { opacity: 0 })
+            .to('.section01__running__start', { opacity: 0 })
+            .to('.logo', { opacity: 1 })
+
+        const tl2 = gsap.timeline({
+            scrollTrigger:{
+                trigger:'.section03',
+                start:'top top',
+                end:'+=1000',
+                scrub: !0,
+            }
+        })
     })
-
-    // 側邊欄收合
-    const [sideBar,setSideBar] = useState(false)
-
-    // 側邊欄按鈕滑鼠點按效果
-    const [mouseHandleIcon,setMouseHandleIcon] = useState(false)
     // user icon點按效果
-    const [mouseHandleUser,setMouseHandleUser] = useState(false)
+    const [mouseHandleUser, setMouseHandleUser] = useState(false)
 
-    // 點擊側邊欄
-    const handleSideBar = () => {
-        setSideBar(!sideBar)
-    }
-    return(
+
+    return (
         <div className="home" ref={ref}>
-            <div className={`sideBar${sideBar?' active':''}`}>
-                <div className='sideBar__menu'>
-                    <a className='sideBar__menu__item' href='https://2022.thef2e.com/news' target='_blank'>
-                        <img className='img01' src={ic_menu_info} alt="" />
-                        <img className='img02' src={ic_menu_info_h} alt="" />
-                        <span>關卡資訊</span>
-                    </a>
-                    <a className='sideBar__menu__item' href='https://2022.thef2e.com/works' target='_blank'>
-                        <img className='img01' src={ic_menu_list} alt="" />
-                        <img className='img02' src={ic_menu_list_h} alt="" />
-                        <span>作品列表</span>
-                    </a>
-                    <a className='sideBar__menu__item' href='https://hackmd.io/ofJD4K7iSI65V19zxC7d0w' target='_blank'>
-                        <img className='img01' src={ic_menu_strategy} alt="" />
-                        <img className='img02' src={ic_menu_strategy_h} alt="" />
-                        <span>攻略資源</span>
-                    </a>
-                    <a className='sideBar__menu__item' href='https://2022.thef2e.com/jobs' target='_blank'>
-                        <img className='img01' src={ic_menu_job} alt="" />
-                        <img className='img02' src={ic_menu_job_h} alt="" />
-                        <span>求職專區</span>
-                    </a>
-                </div>
-                <div className='sideBar__tab'>
-                    <div className={`sideBar__tab__icon ${mouseHandleIcon?'mouseOn':''}`}
-                         onClick={handleSideBar} 
-                         onMouseDown={() => setMouseHandleIcon(true)}
-                         onMouseUp={() => setMouseHandleIcon(false)}
-                    />
-                </div>
-            </div>
-            <div className='map'>
-                <img src={map} alt="" />
-                <img src={map_now} className={`map__now`} alt="" />
-            </div>
-            <div className='join'>
-                <span>JOIN</span>
-                <img src={btn_joinHand} alt="" />
-                <div className='join__btn'></div>
-            </div>
-            <a href="https://2022.thef2e.com/users" 
-               target='_blank' 
-               className={`user ${mouseHandleUser?'mouseOn':''}`} 
-               onMouseDown={() => setMouseHandleUser(true)} 
-               onMouseUp={() => setMouseHandleUser(false)}/>
+            <SideBar />
             <section className='section01'>
+                <img className='logo' src={logo} alt="" />
+                <div className='map'>
+                    <img src={map} alt="" />
+                    <img src={map_now} className={`map__now`} alt="" />
+                </div>
+                <div className='join'>
+                    <span>JOIN</span>
+                    <img src={btn_joinHand} alt="" />
+                    <div className='join__btn'></div>
+                </div>
+                <a href="https://2022.thef2e.com/users"
+                    target='_blank'
+                    className={`user ${mouseHandleUser ? 'mouseOn' : ''}`}
+                    onMouseDown={() => setMouseHandleUser(true)}
+                    onMouseUp={() => setMouseHandleUser(false)} />
                 <div className='trafficLight'>
                     <div className='trafficLight__text'>
                         <h4 className='trafficLight__text__h4 trafficLight__text__h4-ready'>READY?</h4>
@@ -164,10 +135,12 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <section className='section02'>
-                 
+            <section className='section02'></section>
+            <section className='section03'>
+                <div className='container'>
+                    <h2>你是否也有以下困擾?</h2>
+                </div>
             </section>
-            <section className='section03'></section>
         </div>
     )
 }
