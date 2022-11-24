@@ -225,24 +225,39 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-            &__character-f2e{
+            &__item{
+                width: 860px;
+                height: 500px;
                 position: fixed;
-                width: 280px;
-                left: 450px;
-                bottom: 10px;
-            }
-            &__character-ui{
-                position: fixed;
-                width: 300px;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: 30px;
+                transform-origin:430px 500px;
+                bottom: 0;
+                &__character-f2e{
+                    width: 280px;
+                }
+                &__character-ui{
+                    width: 300px;
+                }
+                &__character-team{
+                    width: 280px;
+                }
             }
-            &__character-team{
+            &__grass{
+                width: 1150px;
                 position: fixed;
-                width: 280px;
-                right: 450px;
-                bottom: 10px;
+                display: flex;
+                bottom: -134px;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: space-between;
+                z-index: -1;
+                img{
+                    width: 170px;
+                }
+                &__left{
+                    transform: rotateY(180deg);
+                }
             }
         }
     }
@@ -252,17 +267,52 @@
     }
     .section03{
         width: 100%;
-        height: 100vh;
+        height: 300vh;
         padding-top: 40px;
         h2{
             display: block;
+            position: fixed;
             background-image: url(../img/bg/bg_talking.png);
+            width: 720px;
             height: 151px;
             background-size: 720px 100%;
             background-repeat: no-repeat;
             background-position: center;
             line-height: 123px;
             opacity: 0;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__content{
+            width: 1440px;
+            position: fixed;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            &__item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                &-left{
+                    left: 0;
+                }
+                &-middle{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                &-right{
+                    right: 0;
+                }
+                h4{
+                    color: #FF5136;
+                    line-height: 44px;
+                }
+                img{
+                    width: 466px;
+                }
+            }
         }
     }
 }

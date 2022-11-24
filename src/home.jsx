@@ -18,6 +18,10 @@ import character_team from './assets/img/character/character_team.gif'
 import character_ui from './assets/img/character/character_ui.gif'
 import bg_decorate_01 from './assets/img/bg/bg_decorate_01.png'
 import bg_decorate_05 from './assets/img/bg/bg_decorate_05.png'
+import bg_decorate_09 from './assets/img/bg/bg_decorate_09.png'
+import question_1 from './assets/img/main/question_1.png'
+import question_2 from './assets/img/main/question_2.png'
+import question_3 from './assets/img/main/question_3.png'
 import logo from './assets/img/logo/logo.png'
 import { Timeline } from 'gsap/gsap-core'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -35,31 +39,47 @@ function Home() {
             },
         })
         tl
-            .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2', { display: 'block' }, { display: 'none' })
-            .to('.trafficLight__text__h4-ready', { opacity: 0 })
-            .to('.section01__running__decorate', { scale: 0.8 })
-            .fromTo('.trafficLight__ready-3', { display: 'block' }, { display: 'none' }, '+=2')
-            .to('.trafficLight__ready-2', { display: 'block' })
-            .to('.section01__running__decorate', { scale: 0.6 })
-            .to('.trafficLight__ready-2', { display: 'none' })
-            .to('.trafficLight__ready-1', { display: 'block' })
-            .to('.trafficLight__text__h4-go', { opacity: 1 })
-            .to('.section01__running__decorate', { scale: 0.1, opacity: 0 })
-            .to('.trafficLight', { opacity: 0 })
-            .to('.section01__ul', { opacity: 0 })
-            .to('.section01__logo', { opacity: 0 })
-            .to('.section01__title', { opacity: 0 })
-            .to('.section01__running__start', { opacity: 0 })
-            .to('.logo', { opacity: 1 })
+            .fromTo('.trafficLight__ready-1 ,.trafficLight__ready-2', { display: 'block' }, { display: 'none',duration: 5 })
+            .to('.trafficLight__text__h4-ready', { opacity: 0,duration: 5 })
+            .to('.section01__running__decorate', { scale: 0.8,duration: 5 })
+            .fromTo('.trafficLight__ready-3', { display: 'block' }, { display: 'none',duration: 5 }, '+=2')
+            .to('.trafficLight__ready-2', { display: 'block',duration: 5 })
+            .to('.section01__running__decorate', { scale: 0.6,duration: 5 })
+            .to('.trafficLight__ready-2', { display: 'none',duration: 5 })
+            .to('.trafficLight__ready-1', { display: 'block',duration: 5 })
+            .to('.trafficLight__text__h4-go', { opacity: 1,duration: 5 })
+            .to('.section01__running__decorate', { scale: 0.1, opacity: 0,duration: 5 })
+            .to('.trafficLight', { opacity: 0,duration: 5 })
+            .to('.section01__ul', { opacity: 0,duration: 5 })
+            .to('.section01__logo', { opacity: 0,duration: 5 })
+            .to('.section01__title', { opacity: 0,duration: 5 })
+            .to('.section01__running__start', { opacity: 0,duration: 5 })
+            .to('.logo', { opacity: 1,duration: 5 })
 
         const tl2 = gsap.timeline({
-            scrollTrigger:{
-                trigger:'.section03',
-                start:'top top',
-                end:'+=1000',
+            scrollTrigger: {
+                trigger: '.section03',
+                start: 'top top',
+                end: '+=1000',
                 scrub: !0,
             }
         })
+        tl2
+            .to('.section01__running__road', { width: 900 ,duration: 5})
+            .to('.section01__running__item', { scale: 0.7,duration: 5 })
+            .to('.section01__running__grass',{bottom:-57,duration: 5})
+            .to('.section03 h2', { opacity: 1})
+            .fromTo('.map__now',{x:0,y:0},{x:41,y:-50})
+            .fromTo('.section03__content__item-left',{x:-1000,opacity:0},{x:0,opacity:1,duration: 5})
+            .to('.section01__running__grass',{scale:0.9,bottom:-24,duration: 5})
+            .fromTo('.section03__content__item-middle',{opacity:0},{opacity:1,duration: 5})
+            .to('.section01__running__grass',{scale:0.7,bottom:-1,duration: 5})
+            .fromTo('.section03__content__item-right',{x:2000,opacity:0},{x:0,opacity:1,duration: 5})
+            .to('.section01__running__grass',{scale:0,bottom:-1,duration: 5})
+            // .to('.section03',{css:{zIndex:-1,opacity:0},duration: 5})
+            .to('.section03',{opacity:0,duration: 5})
+            .to('.section01__running__road', { width: 1175 ,duration: 5})
+            .to('.section01__running__item', { scale: 1,duration: 5 })
     })
     // user icon點按效果
     const [mouseHandleUser, setMouseHandleUser] = useState(false)
@@ -129,17 +149,35 @@ function Home() {
                         </div>
                         <img className='section01__running__start' src={start} alt="" />
                         <img className='section01__running__road' src={road} alt="" />
-                        <img className='section01__running__character-f2e' src={character_f2e} alt="" />
-                        <img className='section01__running__character-ui' src={character_ui} alt="" />
-                        <img className='section01__running__character-team' src={character_team} alt="" />
+                        <div className='section01__running__item'>
+                            <img className='section01__running__item__character-f2e' src={character_f2e} alt="" />
+                            <img className='section01__running__item__character-ui' src={character_ui} alt="" />
+                            <img className='section01__running__item__character-team' src={character_team} alt="" />
+                        </div>
+                        <div className='section01__running__grass'>
+                            <img className='section01__running__grass__left' src={bg_decorate_09} alt="" />
+                            <img src={bg_decorate_09} alt="" />
+                        </div>
                     </div>
                 </div>
             </section>
             <section className='section02'></section>
             <section className='section03'>
-                <div className='container'>
                     <h2>你是否也有以下困擾?</h2>
-                </div>
+                    <div className='section03__content'>
+                        <div className='section03__content__item section03__content__item-left'>
+                            <h4>羨慕別人的酷酷網頁動畫?</h4>
+                            <img src={question_1} alt="" />
+                        </div>
+                        <div className='section03__content__item section03__content__item-middle'>
+                            <h4>滿足不了同事的許願?</h4>
+                            <img src={question_2} alt="" />
+                        </div>
+                        <div className='section03__content__item section03__content__item-right'>
+                            <h4>動畫技能樹太雜無從下手?</h4>
+                            <img src={question_3} alt="" />
+                        </div>
+                    </div>
             </section>
         </div>
     )
