@@ -233,6 +233,7 @@
                 transform: translateX(-50%);
                 transform-origin:430px 500px;
                 bottom: 0;
+                z-index: 9;
                 &__character-f2e{
                     width: 280px;
                 }
