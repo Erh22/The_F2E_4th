@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import SideBar from './components/SideBar'
 import Section01 from './components/Section01'
 import Section02 from './components/Section02'
+import Section03 from './components/Section03'
 import Float from './components/Float'
 import { Timeline } from 'gsap/gsap-core'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,7 +17,7 @@ function Home() {
             scrollTrigger: {
                 trigger: '.scrollBlock',
                 start: 'top 10%',
-                end: '+=1500',
+                end: 'bottom 0',
                 scrub: !0,
             },
         })
@@ -42,7 +43,7 @@ function Home() {
             scrollTrigger: {
                 trigger: '.section02',
                 start: 'top top',
-                end: '+=2000',
+                end: 'bottom 1%',
                 scrub: !0,
             }
         })
@@ -62,6 +63,24 @@ function Home() {
             .to('.section02', { opacity: 0, duration: 5 })
             .to('.section01__running__road', { width: 1175, duration: 5 })
             .to('.section01__running__item', { scale: 1, duration: 5 })
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.section03',
+                start: 'top top',
+                end: 'bottom 1%',
+                scrub: !0,
+            }
+        })
+        tl3
+        .to('.map__now',{x:112,y:-40})
+        .to('.section03 h2',{opacity:1})
+        .to('.section03 h5',{opacity:1})
+        .fromTo('.section03__ul',{opacity:0,y:150},{opacity:1,y:0})
+        .to('.section03 h2',{opacity:0,delay:15}, '+=2')
+        .to('.section03 h5',{opacity:0})
+        .to('.section03__ul',{opacity:0,y:150})
+        .to('.section01__running__road', { width: 900, duration: 5 })
+        .to('.section01__running__item', { scale: 0.7, duration: 5 })
     })
 
     return (
@@ -71,6 +90,7 @@ function Home() {
             <Section01 />
             <section className='scrollBlock'></section>
             <Section02 />
+            <Section03 />
         </div>
     )
 }
